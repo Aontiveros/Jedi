@@ -5,6 +5,7 @@ import com.jedi.value.Value
 
 /**
  * @author Tony
+ * Interface for an expression
  */
 trait Expression {
    def execute(env: Environment): Value

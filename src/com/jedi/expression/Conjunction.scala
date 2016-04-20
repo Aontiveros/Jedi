@@ -7,6 +7,7 @@ import com.jedi.value.Boole
 
 /**
  * @author Tony
+ * Evaluates the condition and if the first condition is false it will short circuit fail
  */
 case class Conjunction(cond1: Expression, cond2: Expression) extends SpecialForm{
   override def execute(env:Environment):Value= {

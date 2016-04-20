@@ -1,8 +1,13 @@
 package com.jedi.expression
 
 import com.jedi.value.Environment
-
+/**
+ * Blocks in which each associated local is executed in its repective environment
+ */
 case class Block(locals: List[Expression]) extends SpecialForm {
+  /**
+   * Executes the local environment for the block
+   */
    def execute(env: Environment) = {
      val tempEnv = new Environment(env)
      var i = 0
@@ -11,6 +16,5 @@ case class Block(locals: List[Expression]) extends SpecialForm {
        i += 1
      }
      locals(i).execute(tempEnv)
-     //TODO i may be an issue here
    }
 }

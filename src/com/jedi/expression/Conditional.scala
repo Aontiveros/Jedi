@@ -8,6 +8,7 @@ import com.jedi.value.Notification
 
 /**
  * @author Tony
+ * Executes the conditional and executes the consequent or antecendent based on the condition.
  */
 case class Conditional(condition: Expression, consequent: Expression, antecedent: Expression = null) extends SpecialForm {
     override def execute(env: Environment): Value = {

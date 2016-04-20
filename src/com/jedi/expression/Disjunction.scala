@@ -5,6 +5,9 @@ import com.jedi.value.Environment
 import com.jedi.value.Boole
 import com.jedi.ui.TypeException
 
+/**
+ * Executes the conditions for the respective disjunct. Short circuits if the first condition is true
+ */
 case class Disjunction(cond1: Expression, cond2: Expression) extends SpecialForm{
   override def execute(env:Environment):Value= {
     val executedCondition1 = cond1.execute(env)
